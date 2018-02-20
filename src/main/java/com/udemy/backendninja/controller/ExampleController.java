@@ -13,7 +13,7 @@ public class ExampleController {
 	public static final String EXAMPLE_VIEW = "example";
 	
 	//Primera forma
-//	@RequestMapping(value="/exampleString", method=RequestMethod.GET) //Antigua Version
+	//@RequestMapping(value="/exampleString", method=RequestMethod.GET) //Antigua Version
 	@GetMapping("/exampleString")
 	public String exampleString() {
 		return EXAMPLE_VIEW;
