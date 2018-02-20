@@ -1,6 +1,7 @@
 package com.udemy.backendninja.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 //import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,14 +16,18 @@ public class ExampleController {
 	//Primera forma
 	//@RequestMapping(value="/exampleString", method=RequestMethod.GET) //Antigua Version
 	@GetMapping("/exampleString")
-	public String exampleString() {
+	public String exampleString(Model model) {
+		model.addAttribute("name", "John");
+		
 		return EXAMPLE_VIEW;
 	}
 	//Segunda Forma
 	@GetMapping("/exampleMAV")
 	public ModelAndView exampleMAV()//MAV = ModelAndView
 	{
-		return new ModelAndView(EXAMPLE_VIEW);
+		ModelAndView mov = new ModelAndView(EXAMPLE_VIEW);
+		mov.addObject("name","Mikel");
+		return mov;
 	}
 	
 }
