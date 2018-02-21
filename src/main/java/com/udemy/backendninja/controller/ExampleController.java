@@ -1,5 +1,7 @@
 package com.udemy.backendninja.controller;
 
+import java.util.*;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +22,7 @@ public class ExampleController {
 	@GetMapping("/exampleString")
 	public String exampleString(Model model) {
 		model.addAttribute("person", new Person("John", 23));
+		model.addAttribute("people", getPeople());
 		
 		return EXAMPLE_VIEW;
 	}
@@ -29,7 +32,16 @@ public class ExampleController {
 	{
 		ModelAndView mov = new ModelAndView(EXAMPLE_VIEW);
 		mov.addObject("person", new Person("Mikel", 30));
+		mov.addObject("people", getPeople());
 		return mov;
+	}
+	private List<Person> getPeople(){
+		List<Person> people = new ArrayList<>();
+		people.add(new Person("John",23));
+		people.add(new Person("Mikel",30));
+		people.add(new Person("Eva",43));
+		people.add(new Person("Peter",18));
+		return people;
 	}
 	
 }

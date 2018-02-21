@@ -5,7 +5,22 @@
 		<title>HELLO</title>
 	</head>
 	<body>
-		<h1>HELLO <span th:text="${person.name}"></span>!</h1>
-		<h3><span th:text="${person.name}"></span> your age is: <span th:text="${person.age}"></span></h3>
+		<center>
+			<h1>HELLO <span th:text="${person.name}"></span>!</h1>
+			<h3><span th:text="${person.name}"></span> your age is: <span th:text="${person.age}"></span></h3>
+			
+			<table>
+				<thead>
+					<tr>
+						<th>NAME</th><th>AGE</th>
+					</tr>
+				</thead>
+				<tbody th:each="person : ${people}"> <!-- Por cada persona, en el listado people -->
+					<tr>
+						<td th:text="${person.name}"></td><td th:text="${person.age}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</center>
 	</body>
 </html>
