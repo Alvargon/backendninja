@@ -3,24 +3,25 @@
 	<head>
 		<meta charset="ISO-8859-1"/> <!--Recordar siempre cerrar la etiqueta meta -->
 		<title>HELLO</title>
+		<link href="../css/style.css" rel="stylesheet"/>
 	</head>
 	<body>
-		<center>
+		<div id="principal">
 			<h1>HELLO <span th:text="${person.name}"></span>!</h1>
 			<h3><span th:text="${person.name}"></span> your age is: <span th:text="${person.age}"></span></h3>
 			
-			<table>
+			<table class ="centrado">
 				<thead>
 					<tr>
 						<th>NAME</th><th>AGE</th>
 					</tr>
 				</thead>
 				<tbody th:each="person : ${people}"> <!-- Por cada persona, en el listado people -->
-					<tr>
+					<tr class="contenidoTabla">
 						<td th:text="${person.name}"></td><td th:text="${person.age}"></td>
 					</tr>
 				</tbody>
 			</table>
-		</center>
+		</div>
 	</body>
 </html>

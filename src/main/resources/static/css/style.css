@@ -4,7 +4,70 @@ body {
   background:#C0C0C0;
   font-family: 'Roboto';
   margin-top: 60mm;
+/******vvvvvvvvvvvvvvvv*******/  
+  margin: 0 auto;
 }
+
+.centrado{
+	margin: 0 auto;
+	width: 80%
+}
+#principal {
+    width: 80%;
+    background-color: white;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2%;
+    margin-top: 30px;
+    box-shadow: 0 0 7px -1px black;
+}
+
+#resultH1, .inputs{
+	text-transform:uppercase;
+}
+
+fieldset#fs1{
+    width: 220px;
+    margin: 0 auto;
+}
+
+input[type="submit"] {
+    margin-top: 10px;
+    box-shadow: 1px 1px 4px -1px black;
+}
+input[type="submit"]:hover {
+	box-shadow: none;
+	}
+.inputs:hover {
+    box-shadow: 0 1px 0px -1px black;
+}
+
+.inputs:hover {
+    box-shadow: 0 1px 0px -1px black;
+}
+
+/*Tablas*/
+
+table{
+	border-collapse: collapse;
+}
+table td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+
+table tr:hover {background-color: #ddd;}
+
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
 
 .login-card {
   padding: 60px;

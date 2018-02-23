@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1"/>
+		<title>Form Result</title>
+			<link href="../css/style.css" rel="stylesheet"/>
+	</head>
+	<body>
+		<div id="principal">
+			<h1 id="resultH1">PERSON: <span th:text="${person.name}"></span> <span th:text="${person.age}"></span> ADDED!</h1>
+			<button onclick="history.back()">VOLVER</button>
+		</div>
+	</body>
+</html>

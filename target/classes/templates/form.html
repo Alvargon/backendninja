@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<meta charset="ISO-8859-1"/> <!--Recordar siempre cerrar la etiqueta meta -->
+		<title>FORM</title>
+		<link href="../css/style.css" rel="stylesheet"/>
+	</head>
+	<body>
+		<div id="principal">
+			<form action ="#" th:action="@{/example3/addperson}" th:object="${person}" method="post">
+				<fieldset id="fs1">
+					<legend class="fsTitle1 ES">Formulario Post - Forma 1</legend>
+					<label for ="name">NOMBRE: </label>
+					<input id="name" class="inputs" name="name" type ="text" th:field="*{name}"/>
+					<label for="edad">EDAD: </label>
+					<input id="edad" class="inputs" name="edad" type ="number" th:field="*{age}"/>
+					<input type="submit" value="Submit"/>
+				</fieldset>
+			</form>
+		</div>
+	</body>
+</html>
