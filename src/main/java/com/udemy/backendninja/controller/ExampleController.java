@@ -13,12 +13,17 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.udemy.backendninja.component.ExampleComponent;
 import com.udemy.backendninja.model.Person;
+import com.udemy.backendninja.service.ExampleService;
 
 @Controller
 @RequestMapping("/example")
 public class ExampleController {
 	
 	public static final String EXAMPLE_VIEW = "example";
+	
+	@Autowired
+	@Qualifier("exampleService")
+	private ExampleService exampleService;
 	
 	@Autowired
 	@Qualifier("exampleComponent")
@@ -30,7 +35,7 @@ public class ExampleController {
 	public String exampleString(Model model) {
 		exampleComponent.sayHellow();
 		model.addAttribute("person", new Person("John", 23));
-		model.addAttribute("people", getPeople());
+		model.addAttribute("people", exampleService.getListPeoble());
 		
 		return EXAMPLE_VIEW;
 	}
@@ -40,16 +45,9 @@ public class ExampleController {
 	{
 		ModelAndView mov = new ModelAndView(EXAMPLE_VIEW);
 		mov.addObject("person", new Person("Mikel", 30));
-		mov.addObject("people", getPeople());
+		mov.addObject("people", exampleService.getListPeoble());
 		return mov;
 	}
-	private List<Person> getPeople(){
-		List<Person> people = new ArrayList<>();
-		people.add(new Person("John",23));
-		people.add(new Person("Mikel",30));
-		people.add(new Person("Eva",43));
-		people.add(new Person("Peter",18));
-		return people;
-	}
+
 	
 }
