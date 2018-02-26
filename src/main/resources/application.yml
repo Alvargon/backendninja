@@ -51,3 +51,9 @@ banner:
     #height:  # Height of the banner image in chars (default based on image height)
     #margin:  # Left hand image margin in chars (default 2)
     #invert:  # If images should be inverted for dark terminal themes (default false)
+    
+##Server
+server:
+  error:
+    whitelabel:
+      enabled: false
