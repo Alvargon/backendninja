@@ -10,8 +10,10 @@
 				<fieldset id="fs1">
 					<legend class="fsTitle1 ES">Formulario Post - Forma 1</legend>
 					<label for ="name">NOMBRE: </label>
+					<p th;if="${#fields.hasErrors('name')}" th:erros=*{name}>Name has errors</p>
 					<input id="name" class="inputs" name="name" type ="text" th:field="*{name}"/>
 					<label for="edad">EDAD: </label>
+					<p th;if="${#fields.hasErrors('age')}" th:erros=*{age}>Age has errors</p>
 					<input id="edad" class="inputs" name="edad" type ="number" th:field="*{age}"/>
 					<input type="submit" value="Submit"/>
 				</fieldset>
