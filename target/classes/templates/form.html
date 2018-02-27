@@ -9,12 +9,12 @@
 			<form action ="#" th:action="@{/example3/addperson}" th:object="${person}" method="post">
 				<fieldset id="fs1">
 					<legend class="fsTitle1 ES">Formulario Post - Forma 1</legend>
-					<label for ="name">NOMBRE: </label>
-					<p th;if="${#fields.hasErrors('name')}" th:erros=*{name}>Name has errors</p>
+					<label for ="name">NOMBRE: </label>					
 					<input id="name" class="inputs" name="name" type ="text" th:field="*{name}"/>
-					<label for="edad">EDAD: </label>
-					<p th;if="${#fields.hasErrors('age')}" th:erros=*{age}>Age has errors</p>
+					<p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name has errors</p>
+					<label for="edad">EDAD: </label>					
 					<input id="edad" class="inputs" name="edad" type ="number" th:field="*{age}"/>
+					<p th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age has errors</p>
 					<input type="submit" value="Submit"/>
 				</fieldset>
 			</form>
