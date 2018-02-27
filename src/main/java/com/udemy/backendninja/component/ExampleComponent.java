@@ -12,7 +12,4 @@ public class ExampleComponent {
 	public void sayHellow() {
 		LOG.info("HELLO FROM EXAMPLECOMPONENT");
 	}
-	
-	
-
 }
